@@ -51,8 +51,8 @@
 			isa = PBXGroup;
 			children = (
 				3A8B6D6D2A44B4C200CD3BC3 /* Movie.swift */,
-				3AC0EC162A45FAB0003CB1AC /* Storyboard */,
 				3AC0EC172A45FD13003CB1AC /* MovieDetail.swift */,
+				3AC0EC162A45FAB0003CB1AC /* Storyboard */,
 			);
 			path = Model;
 			sourceTree = "<group>";

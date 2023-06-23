@@ -10,7 +10,7 @@ import Foundation
 
 struct MovieDetailDict {
     
-    // No keys becasue we are good with the properties right now. 
+    // No keys becasue we are good with the properties right now.
     let budget: Int
     let revenue: Int
     let tagline: String
