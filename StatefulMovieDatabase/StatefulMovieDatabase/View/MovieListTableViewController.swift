@@ -7,22 +7,23 @@
 
 import UIKit
 
+
+@available(iOS 16.0, *)
 class MovieListTableViewController: UITableViewController {
     
     // MARK: - Outlets
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-   
+    
     // MARK: - Property
-  
+    
     var tld: TopLevelDictonary?
     
     // MARK: - Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         searchBar.delegate = self
     }
     
@@ -39,29 +40,57 @@ class MovieListTableViewController: UITableViewController {
         return cell
     }
     
-}
-
-extension MovieListTableViewController: UISearchBarDelegate {
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchTerm = searchBar.text else {return}
-        if #available(iOS 16.0, *) {
-            NetworkingController().fetch(endpoint: "movie", with: searchTerm) { result in
+    // MARK: -  Prepare Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard segue.identifier == "toDetailVC",
+              let indexPath = tableView.indexPathForSelectedRow,
+              let cell = tableView.cellForRow(at: indexPath) as? MovieTableViewCell,
+              let destination = segue.destination as? MovieDetailViewController,
+              let movie = cell.movieToSendInSegu  else {return}
+        
+        let movieImage = cell.moviePosterToSendInSegu
+        
+        NetworkingController().fetchMovieDetail(for: movie.id) result in {
+            switch result {
+            case .success(let movieDetailDict):
+                destination.moviePosterSentViaSegue = movieImage
+                destination.movieDetailSendViaSegue = movieDetailDict
+            case.failure(let error):
+                print("Shit!", error.errorDescription!)
+            }
+            
+            
+            
+        }
+        
+        
+    }
+    @available(iOS 16.0, *)
+    extension MovieListTableViewController: UISearchBarDelegate {
+        
+        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            guard let searchTerm = searchBar.text else {return}
+            
+            
+            NetworkingController().fetch(endpoint: "movie", with: searchTerm) {[weak self] result in
                 switch result {
                 case.success(let tld):
                     DispatchQueue.main.async {
-                        self.tld = tld
-                        self.tableView.reloadData()
+                        self?.tld = tld
+                        self?.tableView.reloadData()
                     }
                 case.failure(let error):
                     print(error.errorDescription!)
                 }
                 
             }
-        } else {
-            // Fallback on earlier versions
+            searchBar.resignFirstResponder()
         }
-        //TODO: - Search for a Movie
         
-        }
     }
+    
+    
+}
+

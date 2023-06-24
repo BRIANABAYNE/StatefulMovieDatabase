@@ -28,13 +28,14 @@ struct Movie: Decodable {
         case title
         case synopsis = "overview"
         case posterPath = "poster_path"
+        case id 
         
     }
     
     let title: String
     let synopsis: String
     let posterPath: String?
-    
+    let id: Int
     
     
 }

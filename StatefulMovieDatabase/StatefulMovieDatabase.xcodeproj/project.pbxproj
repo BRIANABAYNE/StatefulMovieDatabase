@@ -11,6 +11,7 @@
 		3A8B6D702A44B73300CD3BC3 /* NetworkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B6D6F2A44B73300CD3BC3 /* NetworkingController.swift */; };
 		3A8B6D722A44BBD400CD3BC3 /* ResultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B6D712A44BBD400CD3BC3 /* ResultError.swift */; };
 		3AC0EC182A45FD13003CB1AC /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC0EC172A45FD13003CB1AC /* MovieDetail.swift */; };
+		3AC0EC1C2A460C2A003CB1AC /* DeatilMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC0EC1B2A460C2A003CB1AC /* DeatilMovieViewController.swift */; };
 		418FA6A827B4058300ABEC96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418FA6A727B4058300ABEC96 /* AppDelegate.swift */; };
 		418FA6AA27B4058300ABEC96 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418FA6A927B4058300ABEC96 /* SceneDelegate.swift */; };
 		418FA6AF27B4058300ABEC96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 418FA6AD27B4058300ABEC96 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		3A8B6D6F2A44B73300CD3BC3 /* NetworkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingController.swift; sourceTree = "<group>"; };
 		3A8B6D712A44BBD400CD3BC3 /* ResultError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultError.swift; sourceTree = "<group>"; };
 		3AC0EC172A45FD13003CB1AC /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		3AC0EC1B2A460C2A003CB1AC /* DeatilMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeatilMovieViewController.swift; sourceTree = "<group>"; };
 		418FA6A427B4058300ABEC96 /* StatefulMovieDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StatefulMovieDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		418FA6A727B4058300ABEC96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		418FA6A927B4058300ABEC96 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				3A8B6D6F2A44B73300CD3BC3 /* NetworkingController.swift */,
+				3A8B6D712A44BBD400CD3BC3 /* ResultError.swift */,
 			);
 			path = NetworkContoller;
 			sourceTree = "<group>";
@@ -72,6 +75,13 @@
 				418FA6B227B4058500ABEC96 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		3AC0EC1D2A460D5A003CB1AC /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		418FA69B27B4058300ABEC96 = {
@@ -97,7 +107,6 @@
 				3AC0EC152A45FA86003CB1AC /* NetworkContoller */,
 				41990FAF27B4C9C50093B4DB /* View */,
 				418FA6BB27B405AC00ABEC96 /* Supporting Files */,
-				3A8B6D712A44BBD400CD3BC3 /* ResultError.swift */,
 			);
 			path = StatefulMovieDatabase;
 			sourceTree = "<group>";
@@ -116,8 +125,10 @@
 		41990FAF27B4C9C50093B4DB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3AC0EC1D2A460D5A003CB1AC /* New Group */,
 				41990FB527B4CA590093B4DB /* MovieListTableViewController.swift */,
 				41990FB727B4CAAF0093B4DB /* MovieTableViewCell.swift */,
+				3AC0EC1B2A460C2A003CB1AC /* DeatilMovieViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,6 +206,7 @@
 			files = (
 				41990FB627B4CA590093B4DB /* MovieListTableViewController.swift in Sources */,
 				41990FB827B4CAAF0093B4DB /* MovieTableViewCell.swift in Sources */,
+				3AC0EC1C2A460C2A003CB1AC /* DeatilMovieViewController.swift in Sources */,
 				418FA6A827B4058300ABEC96 /* AppDelegate.swift in Sources */,
 				3A8B6D722A44BBD400CD3BC3 /* ResultError.swift in Sources */,
 				3A8B6D702A44B73300CD3BC3 /* NetworkingController.swift in Sources */,

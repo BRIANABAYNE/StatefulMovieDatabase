@@ -81,7 +81,7 @@
                                     <outlet property="movieImage" destination="bWg-Hz-tFr" id="6WY-Pm-sg4"/>
                                     <outlet property="movieSynopsisLabel" destination="KC8-RQ-hYI" id="J4X-Uk-G2E"/>
                                     <outlet property="movieTitleLabel" destination="jPE-mY-Vfu" id="ITH-Yf-Sei"/>
-                                    <segue destination="pZU-jW-Vrd" kind="show" id="UTc-hr-y1W"/>
+                                    <segue destination="pZU-jW-Vrd" kind="show" identifier="toDetailVC" id="UTc-hr-y1W"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -99,15 +99,15 @@
             </objects>
             <point key="canvasLocation" x="1152.1739130434783" y="-49.553571428571423"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie Detail Table View Controller-->
         <scene sceneID="WKl-Ar-UZM">
             <objects>
-                <viewController id="pZU-jW-Vrd" sceneMemberID="viewController">
+                <viewController id="pZU-jW-Vrd" customClass="MovieDetailTableViewController" customModule="StatefulMovieDatabase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fR2-OX-II3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRq-H5-gEO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRq-H5-gEO" customClass="DetailViewController">
                                 <rect key="frame" x="0.0" y="102" width="414" height="37"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="34"/>
                                 <color key="textColor" red="0.1071734429" green="0.96498469720000002" blue="0.1741505156" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -198,6 +198,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gr1-qw-dk9"/>
+                    <connections>
+                        <outlet property="movieBudgetLabel" destination="xgi-Ow-NOQ" id="xbe-9s-PYJ"/>
+                        <outlet property="movieImage" destination="8HK-Gx-zh3" id="1cs-fA-ymE"/>
+                        <outlet property="movieOverviewLabel" destination="HSR-Wr-WDm" id="S9d-Mj-PuR"/>
+                        <outlet property="moviePopularityLabel" destination="k6p-jz-uid" id="bXL-YQ-D3P"/>
+                        <outlet property="movieRevLabel" destination="7Np-IE-T83" id="7p1-RC-XUb"/>
+                        <outlet property="movieRunTimeLavbel" destination="svo-fI-ZSf" id="xxl-AX-TyU"/>
+                        <outlet property="movieTitleLabel" destination="yRq-H5-gEO" id="nlM-BN-icc"/>
+                        <outlet property="taglineMovieLabel" destination="pJx-dH-3t6" id="sdD-0N-mVh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rC3-Zz-nu8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

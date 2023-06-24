@@ -7,9 +7,8 @@
 
 import UIKit
 
+@available(iOS 16.0, *)
 class MovieTableViewCell: UITableViewCell {
-    
-    
     
     
     // MARK: - Outlets
@@ -18,36 +17,46 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var movieSynopsisLabel: UILabel!
     
+    // MARK: - Properties
+    var movieToSendInSegu: Movie?
+    var moviePosterToSendInSegu: UIImage?
+    
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        movieImage.image = nil
+    }
+    
     
     func updateView(movie: Movie) {
+        
+        movieToSendInSegu = movie
         fetchImage(movie: movie)
     }
     
-    
     func fetchImage(movie:Movie) {
-        if #available(iOS 16.0, *) {
-            NetworkingController().fetchImage(with: movie) { [weak self] result in
-                switch result {
-                case.success(let poster):
-                    DispatchQueue.main.async {
-                        self?.movieImage.image = poster
-                        self?.movieSynopsisLabel.text = movie.synopsis
-                        self?.movieTitleLabel.text = movie.title
-                        
-                        
-                    }
-                case.failure(let failure):
-                    print(failure.errorDescription!)
+        guard let posterPath = movie.posterPath else { return }
+        
+        NetworkingController().fetchImage(with: movie) { [weak self] result in
+            switch result {
+            case.success(let poster):
+                DispatchQueue.main.async {
+                    self?.moviePosterToSendInSegu = poster
+                    self?.movieImage.image = poster
+                    self?.movieSynopsisLabel.text = movie.synopsis
+                    self?.movieTitleLabel.text = movie.title
+                    
                 }
-                
-                
-                
-                
-                // MARK: - Functions
-                
+            case.failure(let failure):
+                print(failure.errorDescription!)
             }
-        } else {
-            // Fallback on earlier versions
+            
+            
+            // MARK: - Functions
+            
         }
     }
+    // Fallback on earlier versions
 }
+
+

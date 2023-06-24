@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct MovieDetailDict {
+struct MovieDetailDict: Decodable {
     
     // No keys becasue we are good with the properties right now.
     let budget: Int

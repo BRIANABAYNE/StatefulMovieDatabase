@@ -67,5 +67,43 @@ struct NetworkingController {
         }.resume()
     }
     
+    // callback is just a name, can be anything
+    func fetchMovieDetail(for id: Int, callback: @escaping(Result<MovieDetailDict, ResultError>) -> Void) {
+        guard let baseURL = URL(string: "https://api.themoviedb.org/3/movie") else {callback(.failure(.invalidURL)); return}
+        
+        var urlRequest = URLRequest(url: baseURL)
+        // How Do I add an component aka editing the path
+        urlRequest.url?.append(path:"\(id)")
+        let apiKeyQueryItem = URLQueryItem(name: "api_key", value: "1622677c9c625ef4e4e27c015befec5f")
+        urlRequest.url?.append(queryItems: [apiKeyQueryItem]) // needs to be an array
+        
+        
+        
+        URLSession.shared.dataTask(with: urlRequest) { movieDetailData, _, movieDetailError in
+            
+            
+            if let movieDetailError {
+                callback(.failure(.thrownError(movieDetailError))); return
+            }
+            guard let movieDetailData  else { callback(.failure(.noData))}; return
+            
+        do {
+          let movieDetailDict =  try JSONDecoder().decode(MovieDetailDict.self, from: movieDetailData)
+            callback(.success(movieDetailDict))
+        } catch {
+            callback(.failure(.unableToDecode)); return
+            
+        }
+        
+    }.resume()
+    /// Handle the Error, check for data
+        // I if I made it here, I have data I an decode
+    }
+    
+    
+    
+    
+    
+    
     
 }
