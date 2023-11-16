@@ -16,6 +16,7 @@ struct TopLevelDictonary: Decodable {
         case totalResults = "total_results"
         
     }
+    
     let currentPage: Int
     let movies: [Movie]
     let totalPages: Int

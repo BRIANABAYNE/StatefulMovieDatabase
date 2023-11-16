@@ -2,8 +2,7 @@
 //  MovieListTableViewController.swift
 //  StatefulMovieDatabase
 //
-//  Created by Karl Pfister on 2/9/22.
-//
+//   Created by Briana Bayne on 6/23/23.
 
 import UIKit
 
@@ -15,21 +14,18 @@ class MovieListTableViewController: UITableViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
     // MARK: - Property
     
     var tld: TopLevelDictonary?
     
-    // MARK: - Functions
+    // MARK: - Lifecyles
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
     }
     
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return tld?.movies.count ?? 0
     }
     
@@ -39,7 +35,6 @@ class MovieListTableViewController: UITableViewController {
         cell.updateView(movie: movie)
         return cell
     }
-    
     
     // MARK: -  Prepare Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,7 +47,7 @@ class MovieListTableViewController: UITableViewController {
         
         let movieImage = cell.moviePosterToSendInSegu
         
-        NetworkingController().fetchMovieDetail(for: movie.id) result in {
+        NetworkingController().fetchMovieDetail(for: movie.id) { result in
             switch result {
             case .success(let movieDetailDict):
                 destination.moviePosterSentViaSegue = movieImage
@@ -60,37 +55,29 @@ class MovieListTableViewController: UITableViewController {
             case.failure(let error):
                 print("Shit!", error.errorDescription!)
             }
-            
-            
+        }
             
         }
-        
-        
     }
-    @available(iOS 16.0, *)
-    extension MovieListTableViewController: UISearchBarDelegate {
-        
-        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-            guard let searchTerm = searchBar.text else {return}
-            
-            
-            NetworkingController().fetch(endpoint: "movie", with: searchTerm) {[weak self] result in
-                switch result {
-                case.success(let tld):
-                    DispatchQueue.main.async {
-                        self?.tld = tld
-                        self?.tableView.reloadData()
-                    }
-                case.failure(let error):
-                    print(error.errorDescription!)
-                }
-                
-            }
-            searchBar.resignFirstResponder()
-        }
-        
-    }
-    
-    
-}
 
+// MARK: - Extension
+@available(iOS 16.0, *)
+extension MovieListTableViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text else {return}
+        
+        NetworkingController().fetch(endpoint: "movie", with: searchTerm) {[weak self] result in
+            switch result {
+            case.success(let tld):
+                DispatchQueue.main.async {
+                    self?.tld = tld
+                    self?.tableView.reloadData()
+                }
+            case.failure(let error):
+                print(error.errorDescription!)
+            }
+        }
+        searchBar.resignFirstResponder()
+    }
+}

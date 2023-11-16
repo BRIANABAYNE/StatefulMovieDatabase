@@ -10,10 +10,8 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+       
         if #available(iOS 16.0, *) {
             NetworkingController().fetch(endpoint: "movie", with: "Mad Max") { result in
                 switch result {
@@ -25,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
             }
         } else {
-            // Fallback on earlier versions
+         
         }
         return true
     }

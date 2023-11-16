@@ -11,21 +11,15 @@ import UIKit.UIImage
 @available(iOS 16.0, *)
 struct NetworkingController {
     
-    // URL
-    // DATA Task
-    // Decode Data
-    
-    
     func fetch(endpoint: String, with searchTerm: String, completion: @escaping (Result<TopLevelDictonary, ResultError>) -> Void) {
         guard let baseurl = URL(string:"https://api.themoviedb.org/3/search") else {completion(.failure(.invalidURL)); return}
         
-        var urlRequest = URLRequest(url: baseurl) // is requesting the baseURL request. How do I add the components
+        var urlRequest = URLRequest(url: baseurl)
         urlRequest.url?.append(path: endpoint)
         let apiKeyQueryItem = URLQueryItem(name:"api_key", value: "1622677c9c625ef4e4e27c015befec5f")
         let searchQueryItem = URLQueryItem(name: "query", value: searchTerm)
         urlRequest.url?.append(queryItems: [apiKeyQueryItem, searchQueryItem])
         print(urlRequest.url)
-        
         
         URLSession.shared.dataTask(with: urlRequest) {movieData, movieResponse, error in
             
@@ -42,8 +36,8 @@ struct NetworkingController {
                 completion(.success(topLevelDictonary))
                 print("Lets, go!")
             } catch {
-                    completion(.failure(.thrownError(error)))
-                }
+                completion(.failure(.thrownError(error)))
+            }
         }.resume()
         
     }
@@ -58,52 +52,36 @@ struct NetworkingController {
         URLSession.shared.dataTask(with: urlRequest) { imageData, _, error in
             if let error {
                 completion(.failure(.invalidURL)); return
-            
-        }
+                
+            }
             guard let imageData else {completion(.failure(.noData)); return }
-        guard let moviePoster = UIImage(data: imageData) else {completion(.failure(.unableToDecode)); return }
-        completion(.success(moviePoster))
-        
+            guard let moviePoster = UIImage(data: imageData) else {completion(.failure(.unableToDecode)); return }
+            completion(.success(moviePoster))
+            
         }.resume()
     }
     
-    // callback is just a name, can be anything
     func fetchMovieDetail(for id: Int, callback: @escaping(Result<MovieDetailDict, ResultError>) -> Void) {
         guard let baseURL = URL(string: "https://api.themoviedb.org/3/movie") else {callback(.failure(.invalidURL)); return}
-        
         var urlRequest = URLRequest(url: baseURL)
-        // How Do I add an component aka editing the path
         urlRequest.url?.append(path:"\(id)")
         let apiKeyQueryItem = URLQueryItem(name: "api_key", value: "1622677c9c625ef4e4e27c015befec5f")
-        urlRequest.url?.append(queryItems: [apiKeyQueryItem]) // needs to be an array
-        
-        
+        urlRequest.url?.append(queryItems: [apiKeyQueryItem])
         
         URLSession.shared.dataTask(with: urlRequest) { movieDetailData, _, movieDetailError in
-            
             
             if let movieDetailError {
                 callback(.failure(.thrownError(movieDetailError))); return
             }
-            guard let movieDetailData  else { callback(.failure(.noData))}; return
+            guard let movieDetailData else { callback(.failure(.noData)); return }
             
-        do {
-          let movieDetailDict =  try JSONDecoder().decode(MovieDetailDict.self, from: movieDetailData)
-            callback(.success(movieDetailDict))
-        } catch {
-            callback(.failure(.unableToDecode)); return
+            do {
+                let movieDetailDict =  try JSONDecoder().decode(MovieDetailDict.self, from: movieDetailData)
+                callback(.success(movieDetailDict))
+            } catch {
+                callback(.failure(.unableToDecode)); return
+            }
             
-        }
-        
-    }.resume()
-    /// Handle the Error, check for data
-        // I if I made it here, I have data I an decode
+        }.resume()
     }
-    
-    
-    
-    
-    
-    
-    
 }
