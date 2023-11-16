@@ -36,37 +36,37 @@
                                                 <constraint firstAttribute="width" secondItem="bWg-Hz-tFr" secondAttribute="height" multiplier="2:3" id="ADc-u2-xX4"/>
                                             </constraints>
                                         </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="chC-O9-hCR">
-                                            <rect key="frame" x="37" y="28" width="95" height="79"/>
+                                        <stackView opaque="NO" contentMode="center" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="chC-O9-hCR">
+                                            <rect key="frame" x="30" y="28" width="191.5" height="79"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Movie Title)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPE-mY-Vfu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="95" height="30.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="191.5" height="38.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" red="0.81896942853927612" green="0.95360463857650757" blue="0.9194064736366272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Synopsis)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KC8-RQ-hYI">
-                                                    <rect key="frame" x="0.0" y="58.5" width="95" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Synopsis)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KC8-RQ-hYI">
+                                                    <rect key="frame" x="0.0" y="58.5" width="191.5" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20.5" id="KvJ-v2-Enj"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" red="0.70196078429999997" green="0.87450980389999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    <color key="backgroundColor" red="0.76942896842956543" green="0.34170968513384931" blue="0.51929002305801075" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="tintColor" systemColor="labelColor"/>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="chC-O9-hCR" secondAttribute="bottom" constant="50" id="6JE-cw-Qpj"/>
+                                        <constraint firstItem="bWg-Hz-tFr" firstAttribute="leading" secondItem="chC-O9-hCR" secondAttribute="trailing" constant="80" id="8SG-XB-cnP"/>
                                         <constraint firstItem="bWg-Hz-tFr" firstAttribute="trailing" secondItem="jCJ-qN-bX3" secondAttribute="trailingMargin" constant="2" id="ADM-bB-y2I"/>
-                                        <constraint firstItem="chC-O9-hCR" firstAttribute="leading" secondItem="jCJ-qN-bX3" secondAttribute="leadingMargin" constant="17" id="HSQ-m2-bxv"/>
+                                        <constraint firstItem="chC-O9-hCR" firstAttribute="leading" secondItem="jCJ-qN-bX3" secondAttribute="leadingMargin" constant="10" id="HSQ-m2-bxv"/>
                                         <constraint firstItem="chC-O9-hCR" firstAttribute="top" secondItem="jCJ-qN-bX3" secondAttribute="topMargin" constant="17" id="VWr-nh-KtG"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="bWg-Hz-tFr" secondAttribute="bottom" constant="2" id="fCC-Yl-g4T"/>
                                         <constraint firstItem="bWg-Hz-tFr" firstAttribute="top" secondItem="jCJ-qN-bX3" secondAttribute="topMargin" constant="2" id="nWg-jy-B5Q"/>
-                                        <constraint firstItem="chC-O9-hCR" firstAttribute="width" secondItem="jCJ-qN-bX3" secondAttribute="width" multiplier="0.229469" id="q3R-Eq-lgr"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -99,30 +99,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRq-H5-gEO" customClass="DetailViewController">
-                                <rect key="frame" x="0.0" y="102" width="414" height="37"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="34"/>
-                                <color key="textColor" red="0.1071734429" green="0.96498469720000002" blue="0.1741505156" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRq-H5-gEO" customClass="DetailViewController">
+                                <rect key="frame" x="0.0" y="102" width="414" height="41"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="34"/>
+                                <color key="textColor" red="0.96498469720000002" green="0.55969858050861876" blue="0.88710912393262153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag Line " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJx-dH-3t6">
-                                <rect key="frame" x="171" y="143" width="72" height="18.5"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tag Line " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJx-dH-3t6">
+                                <rect key="frame" x="171" y="147" width="72" height="20.5"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
+                                <color key="textColor" red="0.96470588235294119" green="0.65098039215686276" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8HK-Gx-zh3">
-                                <rect key="frame" x="57" y="171.5" width="300" height="300"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8HK-Gx-zh3">
+                                <rect key="frame" x="57" y="177.5" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="HsE-dl-4U2"/>
                                     <constraint firstAttribute="width" constant="300" id="NYl-p5-qEg"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pOk-Gs-TYt">
-                                <rect key="frame" x="137" y="481.5" width="140.5" height="66.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pOk-Gs-TYt">
+                                <rect key="frame" x="140.5" y="487.5" width="133.5" height="68.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dnM-6d-NXZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="140.5" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="133.5" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgi-Ow-NOQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
@@ -130,31 +130,31 @@
                                                     <constraint firstAttribute="height" constant="44" id="QEa-nL-Olm"/>
                                                     <constraint firstAttribute="width" constant="100" id="nV5-qq-NrO"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="18"/>
+                                                <color key="textColor" red="0.96498469720000002" green="0.65094705340000003" blue="0.74105103350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rev" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Np-IE-T83">
-                                                <rect key="frame" x="104" y="0.0" width="36.5" height="44"/>
-                                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="104" y="0.0" width="29.5" height="44"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="17"/>
+                                                <color key="textColor" red="0.96498469720000002" green="0.65094705340000003" blue="0.74105103350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="u8x-YR-9A0">
-                                        <rect key="frame" x="0.0" y="48" width="140.5" height="18.5"/>
+                                        <rect key="frame" x="0.0" y="48" width="133.5" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svo-fI-ZSf">
-                                                <rect key="frame" x="0.0" y="0.0" width="62" height="18.5"/>
-                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
+                                                <color key="textColor" red="0.96498469720000002" green="0.65094705340000003" blue="0.74105103350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="popularity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6p-jz-uid">
-                                                <rect key="frame" x="66" y="0.0" width="74.5" height="18.5"/>
-                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="67.5" y="0.0" width="66" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
+                                                <color key="textColor" red="0.96498469720000002" green="0.65094705340000003" blue="0.74105103350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -164,10 +164,10 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OverView" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSR-Wr-WDm">
-                                <rect key="frame" x="10" y="558" width="394" height="18.5"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="OverView" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSR-Wr-WDm">
+                                <rect key="frame" x="10" y="566" width="394" height="253"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
+                                <color key="textColor" red="0.96498469720000002" green="0.65094705340000003" blue="0.74105103350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -184,6 +184,7 @@
                             <constraint firstItem="pOk-Gs-TYt" firstAttribute="top" secondItem="8HK-Gx-zh3" secondAttribute="bottom" constant="10" id="Y6Q-Uk-pTk"/>
                             <constraint firstItem="HSR-Wr-WDm" firstAttribute="leading" secondItem="9v9-dd-h9P" secondAttribute="leading" constant="10" id="ahr-3w-ifA"/>
                             <constraint firstItem="HSR-Wr-WDm" firstAttribute="top" secondItem="pOk-Gs-TYt" secondAttribute="bottom" constant="10" id="bjD-X7-VR3"/>
+                            <constraint firstItem="9v9-dd-h9P" firstAttribute="bottom" secondItem="HSR-Wr-WDm" secondAttribute="bottom" constant="10" id="ebG-Pz-Sy4"/>
                             <constraint firstItem="yRq-H5-gEO" firstAttribute="leading" secondItem="9v9-dd-h9P" secondAttribute="leading" id="gYa-mi-TWb"/>
                             <constraint firstItem="pJx-dH-3t6" firstAttribute="centerX" secondItem="yRq-H5-gEO" secondAttribute="centerX" id="rkx-8h-2ns"/>
                             <constraint firstItem="9v9-dd-h9P" firstAttribute="trailing" secondItem="HSR-Wr-WDm" secondAttribute="trailing" constant="10" id="yCb-de-vvX"/>
@@ -203,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rC3-Zz-nu8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2122" y="-50"/>
+            <point key="canvasLocation" x="2121.739130434783" y="-50.223214285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="77c-0Z-2Nx">
@@ -230,9 +231,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
